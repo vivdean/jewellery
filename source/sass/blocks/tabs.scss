@@ -1,0 +1,67 @@
+.tabs__header {
+  display: flex;
+}
+
+.tabs__header button {
+  border: none;
+  background-color: transparent;
+  color: $grey-font;
+  outline: none;
+  cursor: pointer;
+  padding-left: 0;
+  margin-right: 30px;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &.active {
+    color: $black-font;
+  }
+
+  @media (max-width: $mobile) {
+    margin-right: 35px;
+  }
+}
+
+.tabs__card {
+  display: none;
+}
+
+.tabs__card.active {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+}
+
+.tabs__card span {
+  @include font-info(14px, 400, 18px);
+}
+
+.tabs__card--add ul {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+
+  @media (max-width: $mobile) {
+    margin-bottom: 40px;
+  }
+}
+
+.tabs__card--add li {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 13px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid $grey;
+}
+
+.tabs__card a {
+  padding: 23px;
+}

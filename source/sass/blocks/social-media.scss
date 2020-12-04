@@ -1,0 +1,153 @@
+.social-media {
+  @include container;
+  margin-top: 120px;
+
+  @media (max-width: $tablet) {
+    margin-top: 75px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 62px;
+  }
+}
+
+.social-media h2 {
+  @include font-info(34px, 700, 44px);
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  letter-spacing: 0.03em;
+  margin-bottom: 18px;
+}
+
+.social-media a {
+  @include font-info(16px, 500, 21px);
+  border-bottom: 1px solid $brown;
+
+  @media (max-width: $mobile) {
+    width: 80px;
+  }
+}
+
+.social-media__img-wrapper {
+  margin: 66px 0;
+  margin-bottom: 130px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 80px;
+    margin-top: 63px;
+  }
+
+  @media (max-width: $mobile) {
+    max-width: 450px;
+    margin: 50px auto;
+    margin-bottom: 55px;
+  }
+}
+
+.social-media__img-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &--first {
+    width: 19.8%;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &--second {
+    width: 34.2%;
+  }
+
+  &--third {
+    width: 41%;
+    align-items: baseline;
+  }
+
+  @media (max-width: $mobile) {
+    &--first {
+      width: 45%;
+    }
+
+    &--second {
+      width: 50%;
+    }
+
+    &--third {
+      width: 100%;
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.social-media__img-container {
+  @media (max-width: $mobile) {
+    margin-bottom: 15px;
+
+    &--last {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.social-media__img-container--first {
+  align-self: flex-start;
+  width: 48.5%;
+
+  @media (max-width: $mobile) {
+    width: 50%;
+  }
+}
+
+.social-media__img-container--fourth {
+  width: 48.5%;
+  align-self: flex-end;
+}
+
+.social-media__img-container--third {
+  align-self: flex-end;
+
+  @media (max-width: $mobile) {
+    padding-top: 5px;
+  }
+}
+
+.social-media__img-container--second,
+.social-media__img-container--third {
+  width: 45.5%;
+}
+
+.social-media__img-container--first img,
+.social-media__img-container--fourth img {
+  width: 232px;
+}
+
+.social-media__img-container--second img,
+.social-media__img-container--third img {
+  width: 218px;
+}
+
+.social-media__img-wrap img {
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  height: 100%;
+
+  &--first {
+    width: 230px;
+  }
+}
+
+.social-media__img-wrap--second img {
+  width: 400px;
+  object-fit: contain;
+}
+
+.social-media__img-container--second,
+.social-media__img-container--fourth {
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}

@@ -1,0 +1,124 @@
+.banner {
+  background-color: $brown;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-size: cover;
+
+  &--index {
+    background-image: url("../img/banner-main-desktop@1x.png");
+    min-height: 463px;
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/banner-main-desktop@2x.png");
+    }
+  }
+
+  &--catalog {
+    background-image: url("../img/banner-catalog-desktop@1x.png");
+    min-height: 261px;
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/banner-catalog-desktop@2x.png");
+    }
+  }
+
+  @media (max-width: $tablet) {
+    &--index {
+      background-image: url("../img/banner-main-tablet@1x.png");
+
+      @media (min-resolution: $retina-dppx) {
+        background-image: url("../img/banner-main-tablet@2x.png");
+      }
+    }
+
+    &--catalog {
+      background-image: url("../img/banner-catalog-tablet@1x.png");
+
+      @media (min-resolution: $retina-dppx) {
+        background-image: url("../img/banner-catalog-tablet@2x.png");
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &--index {
+      background-image: url("../img/banner-main-mobile@1x.png");
+
+      @media (min-resolution: $retina-dppx) {
+        background-image: url("../img/banner-main-mobile@2x.png");
+      }
+    }
+
+    &--catalog {
+      background-image: url("../img/banner-catalog-mobile@1x.png");
+      padding: 0 20px;
+
+      @media (min-resolution: $retina-dppx) {
+        background-image: url("../img/banner-catalog-mobile@2x.png");
+      }
+    }
+  }
+}
+
+.banner h1 {
+  @include font-info(45px, 700, 49px);
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  letter-spacing: 0.03em;
+  color: $white;
+  text-transform: uppercase;
+  padding-top: 155px;
+
+  @media (max-width: $tablet) {
+    margin-top: 30px;
+    padding-right: 20px;
+  }
+
+  @media (max-width: $mobile) {
+    @include font-info(38px, 700, 38px);
+    margin-top: 40px;
+    padding-left: 20px;
+  }
+}
+
+.banner--catalog h1 {
+  @include font-info(34px, 700, 44px);
+  letter-spacing: 0;
+  padding-top: 70px;
+
+  @media (max-width: $tablet) {
+    padding-top: 63px;
+    padding-right: 0;
+  }
+
+  @media (max-width: $mobile) {
+    padding-left: 0;
+    padding-top: 40px;
+  }
+}
+
+.banner span {
+  @include font-info(38px, 500, 49px);
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: lowercase;
+  display: block;
+
+  @media (max-width: $mobile) {
+    @include font-info(34px, 500, 44px);
+  }
+}
+
+.banner--catalog span {
+  @include font-info(22px, 500, 29px);
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+
+  @media (max-width: $mobile) {
+    @include font-info(22px, 500, 26px);
+  }
+}

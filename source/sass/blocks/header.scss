@@ -1,0 +1,386 @@
+.header {
+  padding-top: 35px;
+
+  @media (max-width: $tablet) {
+    background-color: $brown;
+    padding-top: 53px;
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: 35px;
+  }
+}
+
+.header--hide {
+  @media (max-width: $tablet) {
+    background-color: $white;
+    margin-bottom: 50px;
+    padding-top: 53px;
+    padding-bottom: 22px;
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: 35px;
+    margin-bottom: 35px;
+  }
+}
+
+.header .header__logo {
+  @media (max-width: $tablet) {
+    stroke: $white;
+    stroke-width: 0.3px;
+    left: 46%;
+  }
+
+  @media (max-width: $mobile) {
+    width: 52px;
+    height: 52px;
+    left: 41.7%;
+  }
+}
+
+.header__cart-tablet {
+  @media (max-width: $tablet) {
+    stroke: $white;
+    stroke-width: 2px;
+    fill: none;
+  }
+}
+
+.header--hide .header__logo {
+  @media (max-width: $tablet) {
+    fill: $brown;
+    stroke-width: 0.1px;
+    left: 46%;
+
+    @media (max-width: $mobile) {
+      left: 41.5%;
+    }
+  }
+}
+
+.header--hide .header__cart-tablet {
+  @media (max-width: $tablet) {
+    stroke: $black-font;
+  }
+}
+
+.header--nojs.header--hide .header__cart-tablet {
+  @media (max-width: $tablet) {
+    stroke: $white;
+  }
+}
+
+.header__list {
+  @include container;
+  @include reset-list;
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 0;
+
+  @media (max-width: $tablet) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 40px;
+    padding-bottom: 80px;
+    background-color: $brown;
+    text-align: left;
+  }
+}
+
+.header__nav {
+  @media (max-width: $tablet) {
+    display: flex;
+    position: relative;
+  }
+}
+
+.header__logo {
+  position: absolute;
+  top: 63px;
+  left: 47.5%;
+  transform: translateY(-50%);
+
+  @media (max-width: $tablet) {
+    top: 10px;
+  }
+
+  @media (max-width: $tablet) {
+    left: 41.5%;
+  }
+}
+
+.header__link--tablet-mobile {
+  display: none;
+
+  @media (max-width: $tablet) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 6%;
+  }
+
+  @media (max-width: $mobile) {
+    right: 4.7%;
+  }
+}
+
+.header__link--desktop {
+  margin-left: 38px;
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.header__item {
+  &--menu {
+    width: 100%;
+    margin-top: 50px;
+    position: relative;
+
+    &::before,
+    &::after {
+      @include pseudo;
+      background: $grey;
+      height: 1px;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      left: 0;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    @media (max-width: $tablet) {
+      order: 2;
+      margin-top: 0;
+
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  &--form {
+    @media (max-width: $tablet) {
+      order: 1;
+      margin-top: 42px;
+      width: 100%;
+      position: relative;
+    }
+
+    @media (max-width: $mobile) {
+      margin-top: 28px;
+    }
+  }
+
+  &--login {
+    margin-left: auto;
+
+    @media (max-width: $tablet) {
+      order: 3;
+      color: $white;
+      margin-right: auto;
+      margin-left: 0;
+    }
+  }
+}
+
+.header__list a {
+  @include font-info(14px, 500, 21px);
+
+  @media (max-width: $tablet) {
+    @include font-info(18px, 500, 24px);
+    color: $white;
+    margin-left: 0;
+  }
+}
+
+.header__list input[type="search"] {
+  @include font-info(14px, 500, 21px);
+  border: none;
+  outline: none;
+  margin-left: 10px;
+
+  @media (max-width: $tablet) {
+    width: 100%;
+    padding: 10px 0 9px 45px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 21px;
+    color: $white;
+    margin-left: 0;
+  }
+}
+
+.header__list input[type="search"]::placeholder {
+  @media (max-width: $tablet) {
+    color: transparent;
+  }
+}
+
+.header__list button[type="submit"] {
+  border: none;
+  background-image: url("../img/icon-search-black.svg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  outline: none;
+  width: 14px;
+  height: 14px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @media (max-width: $tablet) {
+    background-image: url("../img/icon-search-white.svg");
+    position: absolute;
+    top: 12px;
+    left: 12px;
+  }
+}
+
+.header__sublist {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  width: 535px;
+  position: relative;
+  left: 25px;
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    margin-top: 35px;
+    position: static;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 25px;
+  }
+}
+
+.header__sublist-item {
+  margin-right: 35px;
+  max-width: 94px;
+
+  @media (max-width: $tablet) {
+    margin: 10px 0;
+    max-width: 100%;
+  }
+}
+
+.header__sublist-item-tablet {
+  display: none;
+
+  @media (max-width: $tablet) {
+    display: block;
+
+    &--first {
+      margin-top: 32px;
+    }
+
+    &--last {
+      margin-bottom: 42px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    display: block;
+
+    &--first {
+      margin-top: 22px;
+    }
+
+    &--last {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.header__sublist-item a {
+  @include font-info(16px, 500, 24px);
+
+  @media (max-width: $tablet) {
+    @include font-info(24px, 500, 36px);
+  }
+}
+
+.header__sublist-item-tablet a {
+  @media (max-width: $tablet) {
+    @include font-info(18px, 500, 24px);
+    opacity: 0.75;
+  }
+}
+
+.header__toggle {
+  display: none;
+
+  @media (max-width: $tablet) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 6%;
+    width: 25px;
+    height: 18px;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-image: url("../img/menu-burger-white.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @media (max-width: $mobile) {
+    left: 4.7%;
+  }
+}
+
+.header--hide .header__toggle {
+  @media (max-width: $tablet) {
+    background-image: url("../img/menu-burger-black.svg");
+  }
+}
+
+.header--hide .header__list {
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.header--nojs .header__list {
+  @media (max-width: $tablet) {
+    display: flex;
+  }
+}
+
+.header--nojs .header__toggle {
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.header--nojs.header--hide {
+  @media (max-width: $tablet) {
+    background-color: $brown;
+    margin-bottom: 50px;
+  }
+}

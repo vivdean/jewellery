@@ -1,0 +1,230 @@
+.footer {
+  background-color: $black;
+  padding: 75px 0;
+  padding-bottom: 80px;
+  text-align: left;
+
+  @media (max-width: $tablet) {
+    padding-top: 33px;
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: 35px;
+  }
+}
+
+.footer a {
+  @include font-info(16px, 500, 21px);
+  color: $white;
+}
+
+.footer h2 {
+  @include font-info(34px, 700, 44px);
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  letter-spacing: 0.02em;
+  color: $white;
+  margin-top: 0;
+  margin-bottom: 7px;
+
+  @media (max-width: $mobile) {
+    margin-bottom: 12px;
+  }
+}
+
+.footer p {
+  @include font-info(16px, 400, 21px);
+  color: $grey-font;
+  margin-top: 0;
+  margin-bottom: 35px;
+
+  @media (max-width: $mobile) {
+    margin-bottom: 32px;
+  }
+}
+
+.footer__list {
+  @include reset-list;
+  @include container;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (max-width: $tablet) {
+    padding-right: 19.5%;
+  }
+
+  @media (max-width: $mobile) {
+    padding-right: 5%;
+  }
+}
+
+.footer__mail {
+  width: 42.8%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: $tablet) {
+    width: 100%;
+    margin-bottom: 42px;
+    padding-right: 12px;
+  }
+
+  @media (max-width: $mobile) {
+    max-width: 569px;
+    padding-right: 0;
+  }
+}
+
+.footer__mail form {
+  margin-top: auto;
+  position: relative;
+}
+
+.footer__mail input {
+  @include font-info(14px, 400, 21px);
+  border: none;
+  border-bottom: 1px solid $white;
+  outline: none;
+  background-color: transparent;
+  color: $white;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.footer__mail button[type="submit"] {
+  border: none;
+  background-color: transparent;
+  background-image: url("../img/arrow-right-white.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+  color: $white;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 140px;
+  height: 40px;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus {
+    border: 1px solid $white;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 13px;
+
+  @media (max-width: $tablet) {
+    margin-right: auto;
+    padding-left: 0;
+  }
+}
+
+.footer__socials {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  @media (max-width: $mobile) {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.footer__nav ul,
+.footer__socials ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: -15px;
+
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.footer__socials ul {
+  @media (max-width: $mobile) {
+    @include reset-list;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 20px;
+  }
+}
+
+.footer__socials li {
+  @media (max-width: $mobile) {
+    margin-right: 30px;
+  }
+}
+
+.footer__socials span {
+  margin-left: 12px;
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.footer__img {
+  @media (max-width: $mobile) {
+    &--fb {
+      width: 12px;
+      height: 21px;
+    }
+
+    &--ig {
+      width: 20px;
+      height: 21px;
+    }
+
+    &--pinterest {
+      width: 20px;
+      height: 21px;
+    }
+
+    &--twitter {
+      width: 20px;
+      height: 18px;
+    }
+  }
+}
+
+.footer__nav li,
+.footer__socials li {
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.footer__nav-list--first {
+  padding-right: 30px;
+  padding-left: 10px;
+
+  @media (max-width: $tablet) {
+    padding-left: 0;
+  }
+}
+
+.footer__nav-list--second {
+  @media (max-width: $tablet) {
+    padding-left: 55px;
+  }
+
+  @media (max-width: $mobile) {
+    padding-left: 0;
+    margin: 40px 0;
+  }
+}

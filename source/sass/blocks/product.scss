@@ -1,0 +1,30 @@
+.product {
+  @include container;
+  position: relative;
+  margin-top: 120px;
+
+  @media (max-width: $tablet) {
+    margin-top: 70px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 60px;
+  }
+}
+
+.product h2 {
+  @include font-info(34px, 700, 44px);
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  margin-bottom: 10px;
+}
+
+.product a {
+  @include font-info(16px, 500, 21px);
+  border-bottom: 1px solid $brown;
+
+  @media (max-width: $mobile) {
+    max-width: 80px;
+    display: block;
+    margin: 0 auto;
+  }
+}

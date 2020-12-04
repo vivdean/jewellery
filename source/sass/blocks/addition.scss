@@ -1,0 +1,75 @@
+.addition {
+  @include container;
+  position: relative;
+  margin-top: 115px;
+  margin-bottom: 125px;
+
+  @media (max-width: $tablet) {
+    margin-top: 60px;
+    margin-bottom: 75px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 47px;
+    margin-bottom: 65px;
+  }
+}
+
+.addition h2 {
+  @include font-info(34px, 700, 44px);
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  margin-bottom: 19px;
+}
+
+.addition a {
+  @include font-info(16px, 500, 21px);
+  border-bottom: 1px solid $brown;
+
+  @media (max-width: $mobile) {
+    width: 80px;
+  }
+}
+
+.addition__slider {
+  margin-top: 65px;
+
+  @media (max-width: $tablet) {
+    margin-top: 55px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 45px;
+  }
+}
+
+/*.addition__slider-control {
+  width: 29px;
+  height: 9px;
+  top: 45px;
+  background-image: url("../img/arrow-left-brown-small.svg");
+
+  &--prev {
+    left: 14px;
+  }
+
+  &--next {
+    right: 14px;
+    transform: rotate(-180deg);
+  }
+
+
+  @media (max-width: $tablet) {
+    width: 37px;
+    height: 17px;
+    background-image: url("../img/arrow-left-brown.svg");
+    top: 42px;
+
+    &--prev {
+      left: 5.75%;
+    }
+
+    &--next {
+      right: 5.75%;
+    }
+  }
+}*/

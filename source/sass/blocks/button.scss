@@ -1,0 +1,25 @@
+.button {
+  @include font-info(16px, 500, 21px);
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  background-color: $brown;
+  border: 1px solid $brown;
+  color: $white;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 20px;
+
+  &--white {
+    background-color: $white;
+    color: $black-font;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

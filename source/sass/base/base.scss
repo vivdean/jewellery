@@ -1,0 +1,48 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  font-family: "Poppins", "Cormorant Garamond", "Arial", sans-serif;
+  color: $black-font;
+  background-color: $white;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: $black-font;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

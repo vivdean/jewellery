@@ -1,0 +1,406 @@
+.filter__form {
+  border-top: 1px solid $brown;
+
+  @media (max-width: $tablet) {
+    border-top: none;
+    padding-bottom: 40px;
+  }
+
+  @media (max-width: $mobile) {
+    padding-top: 15px;
+  }
+}
+
+.filter__btn-open {
+  display: none;
+
+  @media (max-width: $tablet) {
+    display: block;
+    width: 100%;
+    padding: 23px;
+  }
+}
+
+.filter__overlay {
+  @media (max-width: $tablet) {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+  }
+}
+
+.filter__content-wrapper {
+  @media (max-width: $tablet) {
+    display: block;
+    position: fixed;
+    background-color: $white;
+    box-shadow: 0 5px 32px rgba(219, 213, 208, 0.24);
+    border: none;
+    width: 55%;
+    height: 100%;
+    top: 28px;
+    left: 0;
+    z-index: 2;
+    overflow-y: scroll;
+  }
+
+  @media (max-width: $mobile) {
+    left: 25px;
+    top: 60px;
+    width: 270px;
+  }
+}
+
+.filter__content {
+  @include reset-list;
+  padding-left: 10px;
+  margin: 0;
+  margin-top: 25px;
+}
+
+.filter__btn-close {
+  display: none;
+
+  @media (max-width: $tablet) {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 53%;
+    width: 32px;
+    height: 32px;
+    background-image: url("../img/filter-close.svg");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    padding: 0;
+  }
+
+  @media (max-width: $mobile) {
+    top: 60px;
+    left: 275px;
+  }
+}
+
+.filter--hide .filter__content-wrapper,
+.filter--hide .filter__overlay {
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.filter--hide.filter--nojs .filter__content-wrapper {
+  @media (max-width: $tablet) {
+    display: block;
+    position: static;
+    width: 60%;
+  }
+
+  @media (max-width: $mobile) {
+    transform: none;
+    width: auto;
+    max-width: 450px;
+    margin: 0 auto;
+    border: 1px solid $brown;
+  }
+}
+
+.filter--hide.filter--nojs .filter__overlay {
+  @media (max-width: $tablet) {
+    display: block;
+    position: static;
+  }
+}
+
+.filter--hide.filter--nojs .filter__btn-open,
+.filter--hide.filter--nojs .filter__btn-close {
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.filter__item {
+  text-align: left;
+  background-color: $white;
+  border-bottom: 1px solid $brown;
+  border-left: 1px solid $brown;
+  border-right: 1px solid $brown;
+  padding: 23px 20px 23px 25px;
+
+  &:last-of-type {
+    margin-bottom: 28px;
+  }
+
+  @media (max-width: $tablet) {
+    padding-top: 33px;
+    padding-left: 20px;
+    padding-bottom: 35px;
+    border: none;
+    border-bottom: 1px solid $brown;
+
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    padding-bottom: 25px;
+    padding-top: 23px;
+
+    &:last-of-type {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+.filter__title {
+  @include font-info(16px, 500, 21px);
+  margin: 0;
+  position: relative;
+  padding-right: 25px;
+  cursor: pointer;
+
+  &::after {
+    @include pseudo;
+    top: 5px;
+    right: 3px;
+    width: 15px;
+    height: 12px;
+    border: none;
+    background-color: $white;
+    outline: none;
+    background-image: url("../img/arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: $tablet) {
+    @include font-info(18px, 500, 23px);
+
+    &::after {
+      top: 7px;
+      right: 21px;
+      width: 23px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+.filter__item li {
+  margin-bottom: 12px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 17px;
+  }
+}
+
+.accordion--show .filter__content {
+  padding-left: 8px;
+
+  &--price {
+    padding: 0;
+  }
+
+  @media (max-width: $tablet) {
+    padding-left: 0;
+  }
+}
+
+.filter button[type="submit"],
+.filter button[type="reset"] {
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 24px;
+
+  @media (max-width: $tablet) {
+    width: 84.5%;
+    margin-right: 20px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-right: 0;
+  }
+}
+
+.filter input[type="checkbox"] + label {
+  @include font-info(14px, 500, 18px);
+  padding-left: 26px;
+  position: relative;
+  display: block;
+
+  @media (max-width: $tablet) {
+    @include font-info(16px, 500, 21px);
+    padding-left: 40px;
+  }
+}
+
+.filter input[type="checkbox"] + label::before {
+  @include pseudo;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  border: 1px solid $brown;
+  cursor: pointer;
+
+  @media (max-width: $tablet) {
+    left: 10px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.filter input[type="checkbox"]:checked + label::after {
+  @include pseudo;
+  left: 0;
+  top: 0;
+  background-color: $brown;
+  width: 15px;
+  height: 15px;
+
+  @media (max-width: $tablet) {
+    left: 10px;
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.filter__range {
+  position: relative;
+  width: 100%;
+}
+
+.filter__range-scale {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: $light-brown;
+  margin-top: 24px;
+
+  @media (max-width: $tablet) {
+    margin-top: 33px;
+  }
+}
+
+.filter__range-bar {
+  height: 2px;
+  width: 55%;
+  margin-left: 21%;
+  background-color: $brown;
+
+  @media (max-width: $tablet) {
+    width: 48%;
+    margin-left: 15%;
+  }
+
+  @media (max-width: $mobile) {
+    width: 60%;
+    margin-left: 13%;
+  }
+}
+
+.filter__range-toggle {
+  position: absolute;
+  top: -5px;
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  background-color: $brown;
+
+  &--min {
+    left: 21%;
+  }
+
+  &--max {
+    left: 73%;
+  }
+
+  @media (max-width: $tablet) {
+    width: 18px;
+    height: 18px;
+    top: -7px;
+
+    &--min {
+      left: 15%;
+    }
+
+    &--max {
+      left: 60%;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &--min {
+      left: 13%;
+    }
+
+    &--max {
+      left: 72%;
+    }
+  }
+}
+
+.filter__price-controls {
+  margin-top: 13px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter__price-controls input[type="number"] {
+  width: 40px;
+  border: none;
+  background: $white;
+}
+
+.filter__price {
+  @include font-info(14px, 500, 18px);
+
+  &--min {
+    margin-left: 18%;
+  }
+
+  &--max {
+    margin-right: 5%;
+  }
+
+  @media (max-width: $tablet) {
+    @include font-info(16px, 500, 21px);
+
+    &--min {
+      margin-left: 13%;
+    }
+
+    &--max {
+      margin-right: 28%;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    &--min {
+      margin-left: 10%;
+    }
+
+    &--max {
+      margin-right: 20px;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+.product-slider {
+  margin-top: 60px;
+
+  @media (max-width: $tablet) {
+    margin-top: 55px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 30px;
+  }
+}
+
+.product-slider__container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  width: 100%;
+  height: 360px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  @media (max-width: $tablet) {
+    width: 678px;
+    height: 450px;
+    margin-top: 32px;
+  }
+
+  @media (max-width: $mobile) {
+    width: 290px;
+    height: 250px;
+  }
+}
+
+.product-slider__wrapper {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+
+.product-slider__item {
+  flex-shrink: 0;
+  width: 270px;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+}
+
+.product-slider__item p {
+  margin-top: 25px;
+  margin-bottom: 7px;
+
+  @media (max-width: $tablet) {
+    margin-top: 22px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: $mobile) {
+    margin-top: 18px;
+    margin-bottom: 8px;
+  }
+}
+
+.product-slider__item span {
+  @include font-info(14px, 700, 18px);
+}
+
+.product-slider__control {
+  position: absolute;
+  top: 38px;
+  width: 29px;
+  height: 9px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  background-image: url("../img/arrow-left-brown-small.svg");
+  background-repeat: no-repeat;
+
+  &--prev {
+    left: 0;
+  }
+
+  &--next {
+    right: 13px;
+    top: 44px;
+    transform: rotate(-180deg);
+  }
+
+  @media (max-width: $tablet) {
+    width: 37px;
+    height: 17px;
+    top: 42px;
+    background-image: url("../img/arrow-left-brown.svg");
+
+    &--prev {
+      left: 5.75%;
+    }
+
+    &--next {
+      right: 5.75%;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.product-slider__item img {
+  @media (max-width: $tablet) {
+    width: 324px;
+    height: 340px;
+  }
+
+  @media (max-width: $mobile) {
+    width: 130px;
+    height: 136px;
+  }
+}
+
+.product-slider__pagination-list {
+  margin-top: 45px;
+
+  @media (max-width: $tablet) {
+    @include font-info(16px, 500, 21px);
+    margin-top: 0;
+  }
+
+  @media (max-width: $mobile) {
+    letter-spacing: 0.12em;
+  }
+}
