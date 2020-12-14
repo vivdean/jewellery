@@ -14,6 +14,12 @@
   }
 }
 
+.modal--static.cart {
+  display: block;
+  position: static;
+  height: 100vh;
+}
+
 .cart__content {
   width: 500px;
   position: relative;
@@ -61,6 +67,15 @@
   &:active {
     opacity: 0.3;
   }
+}
+
+.modal--static .cart__content {
+  position: static;
+  transform: none;
+}
+
+.modal--static .cart__close {
+  display: none;
 }
 
 .cart__wrapper {
@@ -162,6 +177,7 @@
 .cart__description input {
   @include font-info(18px, 400, 23px);
   border: none;
+  margin: 0;
 }
 
 .cart__description-info {

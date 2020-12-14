@@ -5,10 +5,19 @@
   var navMain = document.querySelector('.header');
   var navToggle = document.querySelector('.header__toggle');
 
-  navMain.classList.remove('header--nojs');
+  if (navMain) {
 
-  navToggle.addEventListener('click', function () {
-    navMain.classList.toggle('header--hide');
-  });
+    navMain.classList.remove('header--nojs');
+
+    navToggle.addEventListener('click', function () {
+      if (navMain.classList.contains('header--hide')) {
+        navMain.classList.remove('header--hide');
+        document.body.style.overflow = 'hidden';
+      } else {
+        navMain.classList.add('header--hide');
+        document.body.style.overflow = '';
+      }
+    });
+  }
 
 })();

@@ -41,12 +41,12 @@
       <header class="header header--hide header--nojs">
         <nav class="header__nav">
           <button class="header__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
-          <a href="index.html">
+          <a href="index.html" aria-label="На главную">
             <svg class="header__logo" width="66px" height="66px">
               <use xlink:href="#icon-logo"></use>
             </svg>
           </a>
-          <a href="cart.html" class="header__link header__link--tablet-mobile">
+          <a href="#" class="header__link header__link--tablet-mobile" aria-label="Открыть корзину">
             <svg class="header__cart-tablet" width="20px" height="18px">
               <use xlink:href="#icon-cart"></use>
             </svg>
@@ -63,15 +63,15 @@
               <a href="login.html" class="header__link header__link--login">Login</a>
             </li>
             <li class="header__item header__item--cart">
-              <a href="cart.html" class="header__link header__link--desktop">Cart 0</a>
+              <a href="#" class="header__link header__link--desktop">Cart 0</a>
             </li>
             <li class="header__item header__item--menu">
               <ul class="header__sublist">
-                <li class="header__sublist-item"><a href="index.html#product">What’s new</a></li>
-                <li class="header__sublist-item"><a href="#catalog">Chokers</a></li>
-                <li class="header__sublist-item"><a href="#catalog">Necklaces</a></li>
-                <li class="header__sublist-item"><a href="#catalog">Rings</a></li>
-                <li class="header__sublist-item"><a href="#catalog">Earrings</a></li>
+                <li class="header__sublist-item"><a href="#">What’s new</a></li>
+                <li class="header__sublist-item"><a href="#">Chokers</a></li>
+                <li class="header__sublist-item"><a href="#">Necklaces</a></li>
+                <li class="header__sublist-item"><a href="#">Rings</a></li>
+                <li class="header__sublist-item"><a href="#">Earrings</a></li>
                 <li class="header__sublist-item header__sublist-item-tablet header__sublist-item-tablet--first"><a href="#">About CH</a></li>
                 <li class="header__sublist-item header__sublist-item-tablet"><a href="#">Stores & Hours</a></li>
                 <li class="header__sublist-item header__sublist-item-tablet header__sublist-item-tablet--last"><a href="#">Contact Us</a></li>
@@ -86,11 +86,11 @@
         </div>
         <div class="catalog" id="catalog">
           <div class="catalog__filter filter filter--hide filter--nojs">
-            <button type="button" class="button filter__btn-open">Filter</button>
+            <button type="button" class="button filter__btn-open" aria-label="Открыть фильтр каталога">Filter</button>
             <div class="filter__content-wrapper">
               <form class="filter__form" method="get" action="https://echo.htmlacademy.ru">
-                <div class="filter__item filter__accordion accordion accordion--hide accordion--nojs">
-                  <h4 class="filter__title accordion__title" tabindex="0">Product</h4>
+                <div class="filter__item filter__accordion accordion accordion--nojs">
+                  <h4><a href="#" class="filter__btn accordion__btn">Product</a></h4>
                   <ul class="filter__content accordion__content">
                     <li>
                       <input class="visually-hidden" type="checkbox" name="necklaces" id="filter-necklaces" value="necklaces" checked="">
@@ -110,8 +110,8 @@
                     </li>
                   </ul>
                 </div>
-                <div class="filter__item filter__accordion  accordion accordion--hide accordion--nojs">
-                  <h4 class="filter__title accordion__title" tabindex="0">Material</h4>
+                <div class="filter__item filter__accordion accordion accordion--nojs">
+                  <h4><a href="#" class="filter__btn accordion__btn">Material</a></h4>
                   <ul class="filter__content accordion__content">
                     <li>
                       <input class="visually-hidden" type="checkbox" name="material-gold" id="filter-gold" value="gold" checked="">
@@ -123,8 +123,8 @@
                     </li>
                   </ul>
                 </div>
-                <div class="filter__item filter__accordion  accordion accordion--hide accordion--nojs">
-                  <h4 class="filter__title accordion__title" tabindex="0">Collection</h4>
+                <div class="filter__item filter__accordion accordion accordion--nojs">
+                  <h4><a href="#" class="filter__btn accordion__btn">Collection</a></h4>
                   <ul class="filter__content accordion__content">
                     <li>
                       <input class="visually-hidden" type="checkbox" name="collection-pink_flamingo" id="filter-pink_flamingo" value="pink_flamingo" checked="">
@@ -136,8 +136,8 @@
                     </li>
                   </ul>
                 </div>
-                <div class="filter__item filter__accordion accordion accordion--hide accordion--nojs">
-                  <h4 class="filter__title accordion__title" tabindex="0">Price</h4>
+                <div class="filter__item filter__accordion accordion accordion--nojs">
+                  <h4><a href="#" class="filter__btn accordion__btn">Price</a></h4>
                   <div class="filter__range filter__content filter__content--price accordion__content">
                     <div class="filter__range-controls">
                       <div class="filter__range-scale">
@@ -147,8 +147,8 @@
                       <button type="button" class="filter__range-toggle filter__range-toggle--max" aria-label="Стоимость больше"></button>
                     </div>
                     <div class="filter__price-controls">
-                      <label class="filter__price filter__price--min">$<input name="min-price" type="number" value="55"></label>
-                      <label class="filter__price filter__price--max">$<input name="max-price" type="number" value="155"></label>
+                      <label class="filter__price filter__price--min">$<input name="min-price" type="text" value="55"></label>
+                      <label class="filter__price filter__price--max">$<input name="max-price" type="text" value="155"></label>
                     </div>
                   </div>
                 </div>
@@ -159,7 +159,6 @@
                 <span class="visually-hidden">Закрыть</span>
               </button>
             </div>
-            <div class="filter__overlay"></div>
           </div>
           <section class="catalog__content">
             <h2 class="visually-hidden">Каталог товаров</h2>

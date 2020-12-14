@@ -15,7 +15,8 @@
     color: $black-font;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: 0.7;
   }
 

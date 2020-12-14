@@ -4,6 +4,13 @@
   @media (max-width: $tablet) {
     background-color: $brown;
     padding-top: 53px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: scroll;
+    z-index: 2;
   }
 
   @media (max-width: $mobile) {
@@ -13,15 +20,18 @@
 
 .header--hide {
   @media (max-width: $tablet) {
+    position: static;
+    height: auto;
     background-color: $white;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     padding-top: 53px;
-    padding-bottom: 22px;
+    padding-bottom: 63px;
   }
 
   @media (max-width: $mobile) {
     padding-top: 35px;
-    margin-bottom: 35px;
+    padding-bottom: 57px;
+    margin-bottom: 0;
   }
 }
 
@@ -44,6 +54,21 @@
     stroke: $white;
     stroke-width: 2px;
     fill: none;
+  }
+}
+
+.header__logo {
+  position: absolute;
+  top: 63px;
+  left: 47.5%;
+  transform: translateY(-50%);
+
+  @media (max-width: $tablet) {
+    top: 10px;
+  }
+
+  @media (max-width: $tablet) {
+    left: 41.5%;
   }
 }
 
@@ -98,19 +123,8 @@
   }
 }
 
-.header__logo {
-  position: absolute;
-  top: 63px;
-  left: 47.5%;
-  transform: translateY(-50%);
-
-  @media (max-width: $tablet) {
-    top: 10px;
-  }
-
-  @media (max-width: $tablet) {
-    left: 41.5%;
-  }
+.header__logo-link--index {
+  pointer-events: none;
 }
 
 .header__link--tablet-mobile {
@@ -209,6 +223,7 @@
 .header__list input[type="search"] {
   @include font-info(14px, 500, 21px);
   border: none;
+  border-radius: 0;
   outline: none;
   margin-left: 10px;
 

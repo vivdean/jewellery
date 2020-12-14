@@ -77,13 +77,13 @@
 }
 
 .footer__mail form {
-  margin-top: auto;
   position: relative;
 }
 
 .footer__mail input {
   @include font-info(14px, 400, 21px);
   border: none;
+  border-radius: 0;
   border-bottom: 1px solid $white;
   outline: none;
   background-color: transparent;

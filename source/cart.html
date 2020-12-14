@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Интернет-магазин ювелирных изделий Jewellery">
+    <meta name="Keywords" content="ювелирные изделия, ожерелья, кольца, серьги, кулоны, колье, украшения, золото, чокеры">
+    <title>Jewellery</title>
+    <link rel="preload" href="fonts/poppins-v15-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/poppins-v15-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/cormorant-garamond-v9-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="css/style.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div style="display: none;">
+      <include src="build/img/sprite_auto.svg"></include>
+    </div>
+    <main>
+      <div class="modal modal--cart modal--static cart">
+        <div class="cart__content">
+          <h3>The item was added to your cart</h3>
+          <div class="cart__wrapper">
+            <div class="cart__img-container">
+              <picture>
+                <!-- 1х: 70px; 2x: 140px -->
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/necklace-detail-mobile@1x.webp 1x, img/necklace-detail-mobile@2x.webp 2x">
+                <!-- 1х: 88px; 2x: 176px -->
+                <source type="image/webp" media="(max-width: 1023px)" srcset="img/necklace-detail-tablet@1x.webp 1x, img/necklace-detail-tablet@2x.webp 2x">
+                <!-- 1х: 84px; 2x: 168px -->
+                <source type="image/webp" srcset="img/necklace-detail@1x.webp 1x, img/necklace-detail@2x.webp 2x">
+                <!-- 1х: 84px; 2x: 168px -->
+                <img src="img/necklace-detail@1x.png" srcset="img/necklace-detail@2x.png 2x" alt="Фото товара" width="84" height="79" loading="lazy">
+              </picture>
+            </div>
+            <div class="cart__description">
+              <div class="cart__description-info">
+                <h4>Gold Necklace</h4>
+                <p>$ 115</p>
+              </div>
+              <form class="cart__form" action="https://echo.htmlacademy.ru" method="post">
+                <button type="button" class="cart__button cart__button--increase" aria-label="Increase"></button>
+                <input type="number" id="number" value="1" readonly>
+                <button type="button" class="cart__button cart__button--decrease" aria-label="Decrease"></button>
+              </form>
+            </div>
+          </div>
+          <div class="cart__total">
+            <p>You have 1 item in the cart</p>
+            <b>Cart subtotal: $ 115</b>
+            <a href="catalog.html" class="cart__link button button--white">Continue shopping</a>
+            <a href="cart.html" class="cart__link button">Checkout</a>
+          </div>
+          <button class="cart__close" type="button">
+          <span class="visually-hidden">Закрыть</span>
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+  </html>

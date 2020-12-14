@@ -1,16 +1,4 @@
-.accordion--show .accordion__title {
-  &::after {
-    background-image: url("../img/arrow-up.svg");
-  }
-}
-
-.accordion--nojs .accordion__title {
-  &::after {
-    display: none;
-  }
-}
-
-.accordion--hide .accordion__content {
+.accordion__content {
   display: none;
 }
 
@@ -18,4 +6,10 @@
 .accordion--nojs .accordion__content {
   display: block;
   padding-right: 35px;
+}
+
+.accordion--nojs .accordion__btn {
+  &::after {
+    display: none;
+  }
 }

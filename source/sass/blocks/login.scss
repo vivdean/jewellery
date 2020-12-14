@@ -7,11 +7,16 @@
   height: 100%;
   overflow: auto;
   z-index: 3;
-  background: $background;
+  background: $white;
 
   &--show {
     display: block;
   }
+}
+
+.modal--static.login {
+  display: block;
+  position: static;
 }
 
 .login__content {
@@ -23,7 +28,7 @@
   background-image: url("../img/photo-log-in@1x.png");
   background-position: top;
   background-repeat: no-repeat;
-  background-size: 430px 138px;
+  background-size: contain;
   background-color: $light-brown;
   color: $grey-font;
   padding: 186px 45px 20px;
@@ -32,6 +37,36 @@
   @media (min-resolution: $retina-dppx) {
     background-image: url("../img/photo-log-in@2x.png");
   }
+
+  @media (max-width: $tablet) {
+    width: 442px;
+    background-image: url("../img/photo-log-in-tablet@1x.png");
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/photo-log-in-tablet@2x.png");
+    }
+  }
+
+  @media (max-width: $mobile) {
+    width: 270px;
+    padding-top: 120px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-image: url("../img/photo-log-in-mobile@1x.png");
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/photo-log-in-mobile@2x.png");
+    }
+  }
+}
+
+.modal--static .login__content {
+  position: static;
+  transform: none;
+}
+
+.modal--static .login__close {
+  display: none;
 }
 
 .login h2 {
@@ -39,6 +74,10 @@
   font-family: "Cormorant Garamond", "Times New Roman", serif;
   color: $black-font;
   margin-top: 0;
+
+  @media (max-width: $mobile) {
+    @include font-info(24px, 700, 31px);
+  }
 }
 
 .login ul {
@@ -52,11 +91,33 @@
   &--password {
     margin-bottom: 0;
   }
+
+  @media (max-width: $mobile) {
+    margin-bottom: 20px;
+
+    &--password {
+      margin-bottom: 0;
+    }
+
+    &--button {
+      margin-top: 40px;
+    }
+  }
+}
+
+.login__item span {
+  @media (max-width: $mobile) {
+    @include font-info(14px, 500, 21px);
+  }
 }
 
 .login__button {
   width: 100%;
   margin-bottom: 20px;
+
+  @media (max-width: $mobile) {
+    padding: 25px;
+  }
 }
 
 .login input,
@@ -79,6 +140,14 @@
 
 .login__link {
   color: $black-font;
+
+  @media (max-width: $mobile) {
+    @include font-info(14px, 500, 21px);
+
+    &--password {
+      @include font-info(12px, 500, 18px);
+    }
+  }
 }
 
 .login__link--password {

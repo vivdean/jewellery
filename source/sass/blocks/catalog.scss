@@ -124,11 +124,11 @@
   }
 
   @media (max-width: $tablet) {
-    margin-top: 22px;
+    margin-top: 21px;
     margin-bottom: 17px;
   }
 
-  @media (max-width: $tablet) {
+  @media (max-width: $mobile) {
     margin-top: 15px;
   }
 }

@@ -22,7 +22,7 @@
 
   @media (max-width: $tablet) {
     width: 678px;
-    height: 450px;
+    height: 448px;
     margin-top: 32px;
   }
 
@@ -50,7 +50,7 @@
 }
 
 .product-slider__item p {
-  margin-top: 25px;
+  margin-top: 23px;
   margin-bottom: 7px;
 
   @media (max-width: $tablet) {
@@ -68,6 +68,14 @@
   @include font-info(14px, 700, 18px);
 }
 
+.product-slider__item a {
+  display: block;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
 .product-slider__control {
   position: absolute;
   top: 38px;
@@ -80,11 +88,11 @@
   background-repeat: no-repeat;
 
   &--prev {
-    left: 0;
+    left: 15px;
   }
 
   &--next {
-    right: 13px;
+    right: 15px;
     top: 44px;
     transform: rotate(-180deg);
   }

@@ -5,53 +5,42 @@
     border-top: none;
     padding-bottom: 40px;
   }
-
-  @media (max-width: $mobile) {
-    padding-top: 15px;
-  }
 }
 
 .filter__btn-open {
   display: none;
-
-  @media (max-width: $tablet) {
-    display: block;
-    width: 100%;
-    padding: 23px;
-  }
 }
 
-.filter__overlay {
+.filter {
   @media (max-width: $tablet) {
     display: block;
     position: fixed;
     left: 0;
     top: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: $white;
+    z-index: 3;
   }
 }
 
 .filter__content-wrapper {
   @media (max-width: $tablet) {
-    display: block;
-    position: fixed;
     background-color: $white;
     box-shadow: 0 5px 32px rgba(219, 213, 208, 0.24);
     border: none;
     width: 55%;
     height: 100%;
-    top: 28px;
-    left: 0;
-    z-index: 2;
+    margin-top: 28px;
     overflow-y: scroll;
   }
 
   @media (max-width: $mobile) {
-    left: 25px;
-    top: 60px;
     width: 270px;
+    margin-top: 75px;
+    margin-left: 25px;
   }
 }
 
@@ -67,7 +56,7 @@
 
   @media (max-width: $tablet) {
     display: block;
-    position: fixed;
+    position: absolute;
     top: 10px;
     left: 53%;
     width: 32px;
@@ -80,15 +69,32 @@
   }
 
   @media (max-width: $mobile) {
-    top: 60px;
-    left: 275px;
+    top: 55px;
+    left: 273px;
   }
 }
 
-.filter--hide .filter__content-wrapper,
-.filter--hide .filter__overlay {
+.filter--hide .filter__content-wrapper {
   @media (max-width: $tablet) {
     display: none;
+  }
+}
+
+.filter--hide.filter {
+  @media (max-width: $tablet) {
+    display: block;
+    position: static;
+    height: auto;
+  }
+}
+
+.filter--hide .filter__btn-open {
+  display: none;
+
+  @media (max-width: $tablet) {
+    display: block;
+    width: 100%;
+    padding: 23px;
   }
 }
 
@@ -108,7 +114,7 @@
   }
 }
 
-.filter--hide.filter--nojs .filter__overlay {
+.filter--hide.filter--nojs.filter {
   @media (max-width: $tablet) {
     display: block;
     position: static;
@@ -135,9 +141,7 @@
   }
 
   @media (max-width: $tablet) {
-    padding-top: 33px;
-    padding-left: 20px;
-    padding-bottom: 35px;
+    padding: 33px 36px 35px 20px;
     border: none;
     border-bottom: 1px solid $brown;
 
@@ -156,45 +160,60 @@
   }
 }
 
-.filter__title {
+.filter__btn {
   @include font-info(16px, 500, 21px);
+  display: block;
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
   margin: 0;
-  position: relative;
   padding-right: 25px;
   cursor: pointer;
+  width: 100%;
+  text-align: left;
+  position: relative;
 
-  &::after {
-    @include pseudo;
-    top: 5px;
-    right: 3px;
-    width: 15px;
-    height: 12px;
-    border: none;
-    background-color: $white;
-    outline: none;
-    background-image: url("../img/arrow-down.svg");
-    background-repeat: no-repeat;
-    background-position: center;
+  &:hover,
+  &:focus {
+    opacity: 0.7;
   }
 
-  &:hover {
-    opacity: 0.7;
+  &:active {
+    opacity: 0.3;
   }
 
   @media (max-width: $tablet) {
     @include font-info(18px, 500, 23px);
-
-    &::after {
-      top: 7px;
-      right: 21px;
-      width: 23px;
-    }
   }
 
-  @media (max-width: $mobile) {
-    &::after {
-      right: 0;
+  &::after {
+    @include pseudo;
+    top: 2px;
+    right: 3px;
+    width: 15px;
+    height: 13px;
+    border: none;
+    background-color: $white;
+    background-image: url("../img/arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+
+    @media (max-width: $tablet) {
+      width: 23px;
+      top: 7px;
     }
+  }
+}
+
+.filter__item h4 {
+  margin: 0;
+  width: 100%;
+}
+
+.accordion--show .filter__btn {
+  &::after {
+    background-image: url("../img/arrow-up.svg");
   }
 }
 
@@ -243,6 +262,7 @@
   padding-left: 26px;
   position: relative;
   display: block;
+  cursor: pointer;
 
   @media (max-width: $tablet) {
     @include font-info(16px, 500, 21px);
@@ -258,13 +278,27 @@
   height: 14px;
   background-color: transparent;
   border: 1px solid $brown;
-  cursor: pointer;
 
   @media (max-width: $tablet) {
     left: 10px;
     width: 16px;
     height: 16px;
   }
+}
+
+.filter input[type="checkbox"]:hover + label::before,
+.filter input[type="checkbox"]:hover + label::after {
+  opacity: 0.5;
+}
+
+.filter input[type="checkbox"]:focus + label::before,
+.filter input[type="checkbox"]:focus + label::after {
+  border: 1px solid $black;
+}
+
+.filter input[type="checkbox"]:active + label::before,
+.filter input[type="checkbox"]:active + label::after {
+  opacity: 0.3;
 }
 
 .filter input[type="checkbox"]:checked + label::after {
@@ -365,7 +399,7 @@
   justify-content: space-between;
 }
 
-.filter__price-controls input[type="number"] {
+.filter__price-controls input[type="text"] {
   width: 40px;
   border: none;
   background: $white;

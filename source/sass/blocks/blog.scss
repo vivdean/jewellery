@@ -14,7 +14,7 @@
 .blog h2 {
   @include font-info(34px, 700, 44px);
   font-family: "Cormorant Garamond", "Times New Roman", serif;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .blog a {
@@ -30,13 +30,13 @@
 
   @media (max-width: $tablet) {
     flex-direction: column;
-    margin-top: 63px;
+    margin-top: 65px;
   }
 
   @media (max-width: $mobile) {
     max-width: 400px;
     margin: 0 auto;
-    margin-top: 53px;
+    margin-top: 55px;
   }
 }
 
@@ -143,7 +143,7 @@
 
 .blog__item-article {
   padding: 60px;
-  padding-top: 70px;
+  padding-top: 68px;
   box-sizing: border-box;
   width: 50%;
   min-height: 300px;

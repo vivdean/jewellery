@@ -23,30 +23,29 @@
   }
 }
 
-.FAQ__accordion {
+.FAQ__accordion-wrapper {
   @include reset-list;
   border: 1px solid $brown;
   text-align: left;
 }
 
-.FAQ__accordion-hide {
+.FAQ__accordion {
   border-bottom: 1px solid $brown;
-  padding: 20px;
-  padding-left: 42px;
-  padding-top: 18px;
-  padding-bottom: 44px;
+  padding: 45px 20px 41px 42px;
 
   @media (max-width: $tablet) {
-    padding-bottom: 24px;
+    padding-bottom: 21px;
     padding-left: 48px;
   }
 
   @media (max-width: $mobile) {
-    padding: 4px 22px 3px 24px;
+    padding: 4px 22px 4px 24px;
   }
 }
 
-.FAQ__accordion-hide.accordion--show {
+.FAQ__accordion.accordion--show {
+  padding-top: 42px;
+  padding-left: 42px;
   padding-bottom: 25px;
 
   @media (max-width: $tablet) {
@@ -79,12 +78,22 @@
   }
 }
 
-.FAQ__accordion-title {
+.FAQ h3 {
+  margin: 0;
+}
+
+.FAQ__btn {
   @include font-info(18px, 500, 24px);
+  display: block;
+  box-sizing: border-box;
   position: relative;
   padding-right: 45px;
   cursor: pointer;
   margin-bottom: 0;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  text-align: left;
 
   &::after {
     @include pseudo;
@@ -130,6 +139,19 @@
     &::after {
       top: 0;
       right: 0;
+      width: 20px;
+    }
+  }
+}
+
+.accordion--show .FAQ__btn {
+  &::after {
+    background-image: url("../img/arrow-up.svg");
+  }
+
+  @media (max-width: $mobile) {
+    &::after {
+      top: 6px;
     }
   }
 }
