@@ -175,9 +175,10 @@
 }
 
 .cart__description input {
-  @include font-info(18px, 400, 23px);
+  @include font-info(18px, 400, 0);
   border: none;
   margin: 0;
+  width: 14px;
 }
 
 .cart__description-info {
